@@ -9,9 +9,7 @@ import {
 } from "./constants.js";
 import { SerpCheapService } from "./serpcheap.service.js";
 
-function makeClient(options: SerpCheapModuleOptions): SerpCheap {
-  const { apiKey, isGlobal, ...rest } = options;
-  void isGlobal;
+function makeClient({ apiKey, isGlobal: _isGlobal, ...rest }: SerpCheapModuleOptions): SerpCheap {
   return new SerpCheap(apiKey ?? process.env.SERPCHEAP_API_KEY ?? "", rest);
 }
 
@@ -40,7 +38,11 @@ export class SerpCheapModule {
       global: options.isGlobal ?? false,
       imports: (options.imports ?? []) as DynamicModule["imports"],
       providers: [
-        { provide: SERPCHEAP_OPTIONS, useFactory: options.useFactory, inject: (options.inject ?? []) as FactoryProvider["inject"] },
+        {
+          provide: SERPCHEAP_OPTIONS,
+          useFactory: options.useFactory,
+          inject: (options.inject ?? []) as FactoryProvider["inject"],
+        },
         { provide: SERPCHEAP_CLIENT, useFactory: makeClient, inject: [SERPCHEAP_OPTIONS] },
         serviceProvider,
       ],
