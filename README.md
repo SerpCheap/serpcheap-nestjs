@@ -3,9 +3,13 @@
 [![npm](https://img.shields.io/npm/v/@serpcheap/nestjs)](https://www.npmjs.com/package/@serpcheap/nestjs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-NestJS module for the [serp.cheap](https://serp.cheap) Google SERP API — an
-injectable `SerpCheapService` with `forRoot` / `forRootAsync` config. Built on
+NestJS module for the [serp.cheap](https://serp.cheap) **Google Search API** — an
+injectable `SerpCheapService` over real-time Google SERP data, with `forRoot` /
+`forRootAsync` config. Built on
 [`@serpcheap/sdk`](https://www.npmjs.com/package/@serpcheap/sdk).
+
+Powered by the **cheapest Google Search API** around: $0.0003 per cached search,
+$0.0006 fresh, no monthly minimum (~10× cheaper than SerpApi).
 
 ## Install
 
