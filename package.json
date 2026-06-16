@@ -1,6 +1,6 @@
 {
   "name": "@serpcheap/nestjs",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NestJS module for the serp.cheap SERP API — injectable SerpCheapService, forRoot/forRootAsync config.",
   "type": "module",
   "main": "./dist/index.js",
