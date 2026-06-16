@@ -1,0 +1,52 @@
+{
+  "name": "@serpcheap/nestjs",
+  "version": "0.1.0",
+  "description": "NestJS module for the serp.cheap SERP API — injectable SerpCheapService, forRoot/forRootAsync config.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "prepare": "tsc -p .",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test --experimental-test-coverage --test-coverage-lines=0.95 --test-coverage-branches=0.90 --test-coverage-functions=0.95 --test-coverage-exclude='test/**' test/*.test.ts"
+  },
+  "keywords": [
+    "serp",
+    "google",
+    "search",
+    "nestjs",
+    "serpapi"
+  ],
+  "homepage": "https://serp.cheap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SerpCheap/serpcheap-nestjs.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@serpcheap/sdk": "^0.2.0"
+  },
+  "peerDependencies": {
+    "@nestjs/common": ">=9"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@types/node": "^20.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}
